@@ -1,0 +1,263 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Config>
+  <guid>15d59f97-be87-42b1-ba08-662cbbce8c08</guid>
+  <terminaltheming>True</terminaltheming>
+  <theme>BurntKermit.mpsystheme</theme>
+  <Tuning_Graph_Selected>roll|pitch|nav_roll|nav_pitch|</Tuning_Graph_Selected>
+  <MapType>必应混合地图</MapType>
+  <comport>COM49</comport>
+  <_BAUD>115200</_BAUD>
+  <APMFirmware>ArduCopter2</APMFirmware>
+  <menu_autohide>false</menu_autohide>
+  <kindex>4</kindex>
+  <kindexdate>2022/5/15</kindexdate>
+  <AutoConnect>[
+  {
+    "Label": "Mavlink default port",
+    "Enabled": true,
+    "Port": 14550,
+    "Protocol": 1,
+    "Format": 0,
+    "Direction": 0,
+    "ConfigString": ""
+  },
+  {
+    "Label": "Mavlink alt port",
+    "Enabled": true,
+    "Port": 14551,
+    "Protocol": 1,
+    "Format": 0,
+    "Direction": 0,
+    "ConfigString": ""
+  },
+  {
+    "Label": "Video udp 5000 h264",
+    "Enabled": true,
+    "Port": 5000,
+    "Protocol": 1,
+    "Format": 1,
+    "Direction": 0,
+    "ConfigString": "udpsrc port=5000 buffer-size=90000 ! application/x-rtp ! rtph264depay ! avdec_h264 ! queue leaky=2 ! videoconvert ! video/x-raw,format=BGRA ! appsink name=outsink sync=false"
+  },
+  {
+    "Label": "Video udp 5100 h264",
+    "Enabled": true,
+    "Port": 5100,
+    "Protocol": 1,
+    "Format": 1,
+    "Direction": 0,
+    "ConfigString": "udpsrc port=5100 buffer-size=90000 ! application/x-rtp ! rtph264depay ! avdec_h264 ! queue leaky=2 ! videoconvert ! video/x-raw,format=BGRA ! appsink name=outsink sync=false"
+  },
+  {
+    "Label": "Video udp 5600 h264",
+    "Enabled": true,
+    "Port": 5600,
+    "Protocol": 1,
+    "Format": 1,
+    "Direction": 0,
+    "ConfigString": "udpsrc port=5600 buffer-size=90000 ! application/x-rtp ! rtph264depay ! avdec_h264 ! queue leaky=2 ! videoconvert ! video/x-raw,format=BGRA ! appsink name=outsink sync=false"
+  },
+  {
+    "Label": "Video udp 5601 h265",
+    "Enabled": true,
+    "Port": 5601,
+    "Protocol": 1,
+    "Format": 1,
+    "Direction": 0,
+    "ConfigString": "udpsrc port=5601 buffer-size=90000 ! application/x-rtp ! rtph265depay ! avdec_h265 ! queue leaky=2 ! videoconvert ! video/x-raw,format=BGRA ! appsink name=outsink sync=false"
+  },
+  {
+    "Label": "SkyViper",
+    "Enabled": false,
+    "Port": 554,
+    "Protocol": 0,
+    "Format": 1,
+    "Direction": 1,
+    "ConfigString": "rtspsrc location=rtsp://192.168.99.1/media/stream2 debug=false buffer-mode=1 latency=100 ntp-time-source=3 ! application/x-rtp ! rtph264depay ! queue ! avdec_h264 ! queue leaky=2 ! videoconvert ! video/x-raw,format=BGRA ! appsink name=outsink sync=false"
+  },
+  {
+    "Label": "HereLink",
+    "Enabled": false,
+    "Port": 8554,
+    "Protocol": 0,
+    "Format": 1,
+    "Direction": 1,
+    "ConfigString": "rtspsrc location=rtsp://192.168.43.1:8554/fpv_stream latency=41 udp-reconnect=1 timeout=0 do-retransmission=false ! application/x-rtp ! rtph264depay ! h264parse ! queue ! avdec_h264 ! queue leaky=2 ! videoconvert ! video/x-raw,format=BGRA ! appsink name=outsink sync=false"
+  },
+  {
+    "Label": "Serial",
+    "Enabled": false,
+    "Port": 57600,
+    "Protocol": 2,
+    "Format": 0,
+    "Direction": 1,
+    "ConfigString": ""
+  }
+]</AutoConnect>
+  <AACheck2>True</AACheck2>
+  <update_check>2022/5/15</update_check>
+  <maplast_lat>55.9245858048295</maplast_lat>
+  <maplast_lng>-2.021484375</maplast_lng>
+  <maplast_zoom>3</maplast_zoom>
+  <TXT_homelat>34.291820526123</TXT_homelat>
+  <TXT_homelng>108.850570678711</TXT_homelng>
+  <TXT_homealt>388.87</TXT_homealt>
+  <TXT_WPRad>90</TXT_WPRad>
+  <TXT_loiterrad>90</TXT_loiterrad>
+  <TXT_DefaultAlt>100</TXT_DefaultAlt>
+  <CMB_altmode>Relative</CMB_altmode>
+  <fpminaltwarning>0</fpminaltwarning>
+  <fpcoordmouse>GEO</fpcoordmouse>
+  <displayview>&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;DisplayView xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"&gt;
+  &lt;displayName&gt;Advanced&lt;/displayName&gt;
+  &lt;displaySimulation&gt;true&lt;/displaySimulation&gt;
+  &lt;displayTerminal&gt;true&lt;/displayTerminal&gt;
+  &lt;displayDonate&gt;true&lt;/displayDonate&gt;
+  &lt;displayHelp&gt;true&lt;/displayHelp&gt;
+  &lt;displayAnenometer&gt;true&lt;/displayAnenometer&gt;
+  &lt;displayQuickTab&gt;true&lt;/displayQuickTab&gt;
+  &lt;displayPreFlightTab&gt;true&lt;/displayPreFlightTab&gt;
+  &lt;displayAdvActionsTab&gt;true&lt;/displayAdvActionsTab&gt;
+  &lt;displaySimpleActionsTab&gt;false&lt;/displaySimpleActionsTab&gt;
+  &lt;displayGaugesTab&gt;true&lt;/displayGaugesTab&gt;
+  &lt;displayStatusTab&gt;true&lt;/displayStatusTab&gt;
+  &lt;displayServoTab&gt;true&lt;/displayServoTab&gt;
+  &lt;displayScriptsTab&gt;true&lt;/displayScriptsTab&gt;
+  &lt;displayTelemetryTab&gt;true&lt;/displayTelemetryTab&gt;
+  &lt;displayDataflashTab&gt;true&lt;/displayDataflashTab&gt;
+  &lt;displayMessagesTab&gt;true&lt;/displayMessagesTab&gt;
+  &lt;displayRallyPointsMenu&gt;true&lt;/displayRallyPointsMenu&gt;
+  &lt;displayGeoFenceMenu&gt;true&lt;/displayGeoFenceMenu&gt;
+  &lt;displaySplineCircleAutoWp&gt;true&lt;/displaySplineCircleAutoWp&gt;
+  &lt;displayTextAutoWp&gt;true&lt;/displayTextAutoWp&gt;
+  &lt;displayCircleSurveyAutoWp&gt;true&lt;/displayCircleSurveyAutoWp&gt;
+  &lt;displayPoiMenu&gt;true&lt;/displayPoiMenu&gt;
+  &lt;displayTrackerHomeMenu&gt;true&lt;/displayTrackerHomeMenu&gt;
+  &lt;displayCheckHeightBox&gt;true&lt;/displayCheckHeightBox&gt;
+  &lt;displayPluginAutoWp&gt;true&lt;/displayPluginAutoWp&gt;
+  &lt;displayInstallFirmware&gt;true&lt;/displayInstallFirmware&gt;
+  &lt;displayWizard&gt;true&lt;/displayWizard&gt;
+  &lt;displayFrameType&gt;true&lt;/displayFrameType&gt;
+  &lt;displayAccelCalibration&gt;true&lt;/displayAccelCalibration&gt;
+  &lt;displayCompassConfiguration&gt;true&lt;/displayCompassConfiguration&gt;
+  &lt;displayRadioCalibration&gt;true&lt;/displayRadioCalibration&gt;
+  &lt;displayEscCalibration&gt;true&lt;/displayEscCalibration&gt;
+  &lt;displayFlightModes&gt;true&lt;/displayFlightModes&gt;
+  &lt;displayFailSafe&gt;true&lt;/displayFailSafe&gt;
+  &lt;displaySikRadio&gt;true&lt;/displaySikRadio&gt;
+  &lt;displayBattMonitor&gt;true&lt;/displayBattMonitor&gt;
+  &lt;displayCAN&gt;true&lt;/displayCAN&gt;
+  &lt;displayCompassMotorCalib&gt;true&lt;/displayCompassMotorCalib&gt;
+  &lt;displayRangeFinder&gt;true&lt;/displayRangeFinder&gt;
+  &lt;displayAirSpeed&gt;true&lt;/displayAirSpeed&gt;
+  &lt;displayPx4Flow&gt;true&lt;/displayPx4Flow&gt;
+  &lt;displayOpticalFlow&gt;true&lt;/displayOpticalFlow&gt;
+  &lt;displayOsd&gt;true&lt;/displayOsd&gt;
+  &lt;displayCameraGimbal&gt;true&lt;/displayCameraGimbal&gt;
+  &lt;displayMotorTest&gt;true&lt;/displayMotorTest&gt;
+  &lt;displayBluetooth&gt;true&lt;/displayBluetooth&gt;
+  &lt;displayParachute&gt;true&lt;/displayParachute&gt;
+  &lt;displayEsp&gt;true&lt;/displayEsp&gt;
+  &lt;displayAntennaTracker&gt;true&lt;/displayAntennaTracker&gt;
+  &lt;displayBasicTuning&gt;true&lt;/displayBasicTuning&gt;
+  &lt;displayExtendedTuning&gt;true&lt;/displayExtendedTuning&gt;
+  &lt;displayStandardParams&gt;true&lt;/displayStandardParams&gt;
+  &lt;displayAdvancedParams&gt;true&lt;/displayAdvancedParams&gt;
+  &lt;displayFullParamList&gt;true&lt;/displayFullParamList&gt;
+  &lt;displayFullParamTree&gt;true&lt;/displayFullParamTree&gt;
+  &lt;displayParamCommitButton&gt;false&lt;/displayParamCommitButton&gt;
+  &lt;displayBaudCMB&gt;true&lt;/displayBaudCMB&gt;
+  &lt;displaySerialPortCMB&gt;true&lt;/displaySerialPortCMB&gt;
+  &lt;standardFlightModesOnly&gt;false&lt;/standardFlightModesOnly&gt;
+  &lt;autoHideMenuForce&gt;false&lt;/autoHideMenuForce&gt;
+  &lt;isAdvancedMode&gt;true&lt;/isAdvancedMode&gt;
+&lt;/DisplayView&gt;</displayview>
+  <logdirectory>C:\Users\user01\Documents\Mission Planner\logs</logdirectory>
+  <language>en-US</language>
+  <MainHeight>740</MainHeight>
+  <MainWidth>1411</MainWidth>
+  <MainMaximised>Normal</MainMaximised>
+  <MainLocX>244</MainLocX>
+  <MainLocY>140</MainLocY>
+  <FlightSplitter>428</FlightSplitter>
+  <COM4_BAUD>115200</COM4_BAUD>
+  <camera_fovh>65.3255462646484</camera_fovh>
+  <camera_fovv>46.3971824645996</camera_fovv>
+  <grid_camera>Sony A7R</grid_camera>
+  <grid_alt>200</grid_alt>
+  <grid_angle>277.886282434802</grid_angle>
+  <grid_camdir>True</grid_camdir>
+  <grid_usespeed>False</grid_usespeed>
+  <grid_dist>102.571422457695</grid_dist>
+  <grid_overshoot1>156</grid_overshoot1>
+  <grid_overshoot2>156</grid_overshoot2>
+  <grid_leadin>156</grid_leadin>
+  <grid_overlap>50</grid_overlap>
+  <grid_sidelap>60</grid_sidelap>
+  <grid_spacing>85.7142857142857</grid_spacing>
+  <grid_crossgrid>True</grid_crossgrid>
+  <grid_spiral>False</grid_spiral>
+  <grid_startfrom>Home</grid_startfrom>
+  <grid_autotakeoff>True</grid_autotakeoff>
+  <grid_autotakeoff_RTL>True</grid_autotakeoff_RTL>
+  <grid_internals>False</grid_internals>
+  <grid_footprints>False</grid_footprints>
+  <grid_advanced>True</grid_advanced>
+  <grid_trigdist>True</grid_trigdist>
+  <grid_digicam>False</grid_digicam>
+  <grid_repeatservo>False</grid_repeatservo>
+  <grid_breakstopstart>True</grid_breakstopstart>
+  <grid_copter_spline>False</grid_copter_spline>
+  <grid_copter_delay>0</grid_copter_delay>
+  <grid_copter_headinghold_chk>False</grid_copter_headinghold_chk>
+  <grid_min_lane_separation>1</grid_min_lane_separation>
+  <fw_check>2022/5/15</fw_check>
+  <COM49_BAUD>115200</COM49_BAUD>
+  <InputBoxEnterAngleThiswillbetheheading>0</InputBoxEnterAngleThiswillbetheheading>
+  <CHK_autopan>True</CHK_autopan>
+  <SHOWAGAIN_New_Firmware-ArduPlane_V4.1.2>False</SHOWAGAIN_New_Firmware-ArduPlane_V4.1.2>
+  <Tracker_TXT_tiltspeed>100</Tracker_TXT_tiltspeed>
+  <Tracker_TXT_tiltaccel>5</Tracker_TXT_tiltaccel>
+  <Tracker_TXT_panspeed>100</Tracker_TXT_panspeed>
+  <Tracker_TXT_panaccel>5</Tracker_TXT_panaccel>
+  <Tracker_TXT_centertilt>1500</Tracker_TXT_centertilt>
+  <Tracker_TXT_centerpan>1500</Tracker_TXT_centerpan>
+  <Tracker_TXT_pwmrangetilt>1000</Tracker_TXT_pwmrangetilt>
+  <Tracker_TXT_pwmrangepan>1000</Tracker_TXT_pwmrangepan>
+  <Tracker_CHK_revtilt>False</Tracker_CHK_revtilt>
+  <Tracker_CHK_revpan>False</Tracker_CHK_revpan>
+  <Tracker_TXT_tiltrange>90</Tracker_TXT_tiltrange>
+  <Tracker_TRK_tilttrim>0</Tracker_TRK_tilttrim>
+  <Tracker_TXT_panrange>360</Tracker_TXT_panrange>
+  <Tracker_TRK_pantrim>0</Tracker_TRK_pantrim>
+  <Tracker_CMB_baudrate />
+  <Tracker_CMB_serialport>COM49</Tracker_CMB_serialport>
+  <Tracker_CMB_interface>Maestro</Tracker_CMB_interface>
+  <rawparam_Command_widthpercent>8</rawparam_Command_widthpercent>
+  <rawparam_Value_widthpercent>5</rawparam_Value_widthpercent>
+  <rawparam_Units_widthpercent>5</rawparam_Units_widthpercent>
+  <rawparam_Options_widthpercent>11</rawparam_Options_widthpercent>
+  <rawparam_Desc_widthpercent>65</rawparam_Desc_widthpercent>
+  <rawparam_Fav_widthpercent>5</rawparam_Fav_widthpercent>
+  <rawtree_Command_percent>3</rawtree_Command_percent>
+  <rawtree_Value_percent>3</rawtree_Value_percent>
+  <rawtree_Unit_percent>3</rawtree_Unit_percent>
+  <rawtree_Range_percent>3</rawtree_Range_percent>
+  <rawtree_Description_percent>85</rawtree_Description_percent>
+  <SHOWAGAIN_New_Firmware-ArduPlane_V4.1.3>False</SHOWAGAIN_New_Firmware-ArduPlane_V4.1.3>
+  <WPFileDirectory>C:\Users\user01\Desktop</WPFileDirectory>
+  <InputBoxEnterAltEnterGuidedModeAlt>100</InputBoxEnterAltEnterGuidedModeAlt>
+  <guided_alt>100</guided_alt>
+  <russian_hud>False</russian_hud>
+  <groundColorToolStripMenuItem>False</groundColorToolStripMenuItem>
+  <SHOWAGAIN_New_Firmware-ArduPlane_V4.1.4>False</SHOWAGAIN_New_Firmware-ArduPlane_V4.1.4>
+  <SHOWAGAIN_New_Firmware-ArduPlane_V4.1.5>False</SHOWAGAIN_New_Firmware-ArduPlane_V4.1.5>
+  <InputBoxMessagePleaseenteramessageaboutthiserrorifyoucan />
+  <SHOWAGAIN_New_Firmware-ArduPlane_V4.1.6>False</SHOWAGAIN_New_Firmware-ArduPlane_V4.1.6>
+  <grid_MiniLine_spacing>150</grid_MiniLine_spacing>
+  <grid_BufferPoint>50</grid_BufferPoint>
+  <SHOWAGAIN_New_Firmware-ArduPlane_V4.1.7>False</SHOWAGAIN_New_Firmware-ArduPlane_V4.1.7>
+  <RegisterUser>2021-03-27 22:37:46</RegisterUser>
+  <YangDa_connetUAVCheck>1</YangDa_connetUAVCheck>
+</Config>
