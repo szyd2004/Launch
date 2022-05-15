@@ -1,0 +1,6 @@
+1，测绘界面新增缓存距离 
+2.测绘新增  最小行间距 =   150 (默认)
+Min Lane separation =   最小行间距 / distbetween （四舍五入取整写入）
+3. 合并 overshoot、overshoot、leadin 为一个参数，一个值改变三个均改变；
+4.测区进入开始，出测区结束；
+5.主页增加删除拍照点功能；

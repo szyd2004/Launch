@@ -1,0 +1,2 @@
+1.美工，请设计一个logo 格式*.ico，详见 mpdesktop.ico，大小128*128；
+2.设计一个展示公司特色的登录图片，详见splashdark.jpg
