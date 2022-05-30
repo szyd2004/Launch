@@ -818,13 +818,13 @@ namespace MissionPlanner
             {
                 if(IsDebugFlag)
                 {
-                    this.Text = splash?.Text + "-Trial version unlimited";
-                    titlebar = splash?.Text + "-Trial version unlimited";
+                    this.Text = splash?.Text + "-V2";
+                    titlebar = splash?.Text + "-V2";
                 }
                 else
                 {
-                    this.Text = splash?.Text;
-                    titlebar = splash?.Text;
+                    this.Text = splash?.Text + "-V1";
+                    titlebar = splash?.Text + "-V1";
                 }
             }
 
