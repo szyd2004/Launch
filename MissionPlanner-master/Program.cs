@@ -88,10 +88,23 @@ namespace MissionPlanner
             //Console.WriteLine("Data Dir " + Settings.GetDataDirectory());
             //Console.WriteLine("Log Dir " + Settings.GetDefaultLogDir());
             //Console.WriteLine("Running Dir " + Settings.GetRunningDirectory());
-            //Console.WriteLine("User Data Dir " + Settings.GetUserDataDirectory());            
+            //Console.WriteLine("User Data Dir " + Settings.GetUserDataDirectory());
+
+            System.Windows.Forms.Application.EnableVisualStyles();
+            XmlConfigurator.Configure(LogManager.GetRepository(Assembly.GetCallingAssembly()));
+            log.Info("******************* Logging Configured *******************");
 
             var t = Type.GetType("Mono.Runtime");
             MONO = (t != null);
+            string path = Settings.GetRunningDirectory();
+            log.Info("******************* path *******************");
+            log.Info(path);
+            
+            if (!Directory.Exists(path))
+                Directory.CreateDirectory(path);
+
+
+
 
             Directory.SetCurrentDirectory(Settings.GetRunningDirectory());
 
@@ -103,9 +116,7 @@ namespace MissionPlanner
 
             Thread = Thread.CurrentThread;
 
-            System.Windows.Forms.Application.EnableVisualStyles();
-            XmlConfigurator.Configure(LogManager.GetRepository(Assembly.GetCallingAssembly()));
-            log.Info("******************* Logging Configured *******************");
+          
 
             ServicePointManager.DefaultConnectionLimit = 10;
 

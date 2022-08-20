@@ -195,10 +195,11 @@ namespace MissionPlanner.Utilities
         
         public static void GetThemesList()
         {
+            log.Info("GetThemesList");
 
             String runningDir = Settings.GetRunningDirectory();
             String userDir = Settings.GetUserDataDirectory();
-
+         
             if (ThemeNames == null)
             {
                 ThemeNames = new List<String>();
@@ -207,13 +208,13 @@ namespace MissionPlanner.Utilities
             {
                 ThemeNames.Clear();
             }
-
+           
             //Get default themes from program directory (system themes are read only)
             var themeFiles = Directory.EnumerateFiles(runningDir, "*.mpsystheme");
             foreach (string currentFile in themeFiles)
             {
                 ThemeNames.Add(Path.GetFileName(currentFile));
-            }
+            }            
             //Get theme files from user directory (user themes can be overwritten)
             themeFiles = Directory.EnumerateFiles(userDir, "*.mpusertheme");
             foreach (string currentFile in themeFiles)
@@ -226,13 +227,15 @@ namespace MissionPlanner.Utilities
 
         public static void LoadTheme(string strThemeName)
         {
+            log.Info("LoadTheme0");
 
             string themeFileToLoad = "";
 
-            Console.WriteLine(strThemeName + " theme is loading");
+           Console.WriteLine(strThemeName + " theme is loading");
 
             ThemeManager.GetThemesList();
-            
+          
+
             //check theme extension to determine location (mpsystheme is in the program directory, mpusertheme is in the userdata directory)
             if (Path.GetExtension(strThemeName).Equals(".mpsystheme", StringComparison.OrdinalIgnoreCase))
             {
@@ -242,7 +245,7 @@ namespace MissionPlanner.Utilities
             {
                 themeFileToLoad = Settings.GetUserDataDirectory() + strThemeName;
             }
-
+           
             try
             {
                 ThemeManager.thmColor = ThemeManager.ReadFromXmlFile<ThemeColorTable>(themeFileToLoad);
@@ -254,13 +257,13 @@ namespace MissionPlanner.Utilities
                 ThemeManager.thmColor = new ThemeColorTable(); //Init colortable
                 ThemeManager.thmColor.InitColors();
             }
-
+           
             if (ThemeManager.thmColor == null)
             {
                 ThemeManager.thmColor = new ThemeColorTable(); //Init colortable
                 ThemeManager.thmColor.InitColors();
             }
-
+            
             //Copy color values to the ThemeManager color variables
             ThemeManager.thmColor.SetTheme();
             Settings.Instance["theme"] = ThemeManager.thmColor.strThemeName;

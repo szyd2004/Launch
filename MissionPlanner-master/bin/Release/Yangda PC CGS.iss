@@ -3,8 +3,8 @@
 
 [Setup]
 AppName=LAUNCH GCS 
-AppVerName=LAUNCH GCS V1.1.8 V1
-VersionInfoVersion=1.1.8
+AppVerName=LAUNCH GCS V1.1.9 V1
+VersionInfoVersion=1.1.9
 AppPublisher=Shenzhen Yangda UAV Co., Ltd
 AppPublisherURL=http://www.yangda.com/
 AppSupportURL=http://www.yangda.com/
@@ -14,11 +14,11 @@ DefaultGroupName=LAUNCH UAV\LAUNCH GCS
 DisableDirPage = no
 CreateAppDir=yes
 OutputDir=.
-OutputBaseFilename=LAUNCH GCS V1.1.8 V1 
+OutputBaseFilename=LAUNCH GCS V1.1.9 V1 
 Compression=lzma
 ;WindowVisible=yes
 FlatComponentsList=yes         
-VersionInfoDescription=LAUNCH GCS V1.1.8 V1
+VersionInfoDescription=LAUNCH GCS V1.1.9 V1
 SolidCompression=true
 WizardImageFile=.\net461\Office2007-1.bmp
 WizardSmallImageFile=.\net461\WizModernSmallImage-Is-1.bmp
@@ -46,7 +46,7 @@ Source: ".\net461\*"; DestDir: "{app}"; Flags: ignoreversion recursesubdirs crea
 [Icons]    
 Name: "{group}\LAUNCH GCS"; Filename: "{app}\LAUNCH GCS.exe"
 Name: "{group}\{cm:UninstallProgram,LAUNCH GCS}"; Filename: "{uninstallexe}"
-Name: "{userdesktop}\LAUNCH GCS V1.1.8 V1";Filename: "{app}\LAUNCH GCS.exe"
+Name: "{userdesktop}\LAUNCH GCS V1.1.9 V1";Filename: "{app}\LAUNCH GCS.exe"
 
 ; Name: "{group}\Start service"; Filename: "{app}\install.bat" ;  IconFilename: "{app}\install.ICO"  ;WorkingDir: "{app}" ;Comment: "Start service"
 ; Name: "{group}\Stop service"; Filename: "{app}\uninstall.bat" ;  IconFilename: "{app}\uninstall.ICO"  ;WorkingDir: "{app}" ;Comment: "Stop service"

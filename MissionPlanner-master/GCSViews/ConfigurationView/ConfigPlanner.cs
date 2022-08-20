@@ -986,5 +986,11 @@ namespace MissionPlanner.GCSViews.ConfigurationView
             else
                 Settings.Instance["YangDa_connetUAVCheck"] = "0";
         }
+
+        private void my_test_Click(object sender, EventArgs e)
+        {
+            Form1_testUrl form = new Form1_testUrl();
+            form.ShowDialog();
+        }
     }
 }

@@ -267,6 +267,8 @@ namespace MissionPlanner.Utilities
 
             var path = Environment.GetFolderPath(Environment.SpecialFolder.CommonApplicationData) + Path.DirectorySeparatorChar + AppConfigName +
                           Path.DirectorySeparatorChar;
+            if (!Directory.Exists(path))
+                Directory.CreateDirectory(path);
 
             return path;
         }
@@ -279,7 +281,8 @@ namespace MissionPlanner.Utilities
         {
             var path = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + Path.DirectorySeparatorChar + AppConfigName +
                           Path.DirectorySeparatorChar;
-
+            if (!Directory.Exists(path))
+                Directory.CreateDirectory(path);
             return path;
         }
 

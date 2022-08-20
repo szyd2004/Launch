@@ -523,7 +523,7 @@ namespace MissionPlanner
         public GCSViews.FlightData FlightData;
 
         public GCSViews.FlightPlanner FlightPlanner;
-        GCSViews.SITL Simulation;     
+        GCSViews.SITL Simulation;
 
         private Form connectionStatsForm;
         private ConnectionStats _connectionStats;
@@ -655,7 +655,8 @@ namespace MissionPlanner
             }
             MenuHelp.Visible = false;
         }
-
+        private bool TestUrl_Enable = false;
+        private int TestUrl_StartTime = 1;
         public MainV2()
         {
             log.Info("Mainv2 ctor");
@@ -667,7 +668,6 @@ namespace MissionPlanner
 
             // load config
             LoadConfig();
-
             // force language to be loaded
             L10N.GetConfigLang();
 
@@ -706,16 +706,17 @@ namespace MissionPlanner
             ThemeManager.thmColor.InitColors();     //This fills up the table with BurntKermit defaults. 
             ThemeManager.thmColor.SetTheme();              //Set the colors, this need to handle the case when not all colors are defined in the theme file
 
- 
 
+            log.Info("Mainv2 ctor1");
             if (Settings.Instance["theme"] == null) Settings.Instance["theme"] = "BurntKermit.mpsystheme";
-
+            log.Info("Mainv2 ctor22");
+            log.Info(Settings.Instance["theme"]);
             ThemeManager.LoadTheme(Settings.Instance["theme"]);
-
+            log.Info("Mainv2 ctor33");
             Utilities.ThemeManager.ApplyThemeTo(this);
-
+            
             MyView = new MainSwitcher(this);
-
+          
             View = MyView;
 
             //startup console
@@ -732,6 +733,7 @@ namespace MissionPlanner
             _connectionControl.cmb_sysid.Click += cmb_sysid_Click;
 
             _connectionControl.ShowLinkStats += (sender, e) => ShowConnectionStatsForm();
+            
             srtm.datadirectory = Settings.GetDataDirectory() +
                                  "srtm";
 
@@ -843,7 +845,7 @@ namespace MissionPlanner
                 var previousExecutionState =
                     NativeMethods.SetThreadExecutionState(NativeMethods.ES_CONTINUOUS | NativeMethods.ES_SYSTEM_REQUIRED);
             }
-
+            log.Info("Mainv2 ctor5");
             ChangeUnits();
 
             if (Settings.Instance["showairports"] != null)
@@ -1096,7 +1098,25 @@ namespace MissionPlanner
 
             // save config to test we have write access
             SaveConfig();
+
             IniUI();
+
+            if (Settings.Instance["TestUrl_enable"] != null)
+            {
+                if ("0" == Settings.Instance["TestUrl_enable"].ToString())
+                {
+                    TestUrl_Enable = false;
+                }
+                else
+                    TestUrl_Enable = true;
+            }
+            if (Settings.Instance["TestUrl_startTime"] != null)
+            {
+                if (Settings.Instance["TestUrl_startTime"] != "")
+                {
+                    TestUrl_StartTime = Settings.Instance.GetInt32("TestUrl_startTime");
+                }
+            }
             timer1.Interval = 1000;
             timer1.Start();
         }
@@ -4783,8 +4803,13 @@ namespace MissionPlanner
         }
         int Timeout = 0;
         bool CheckSN = false;
+        long urlindex = 0;
         private void timer1_Tick(object sender, EventArgs e)
         {
+            if(TestUrl_Enable)
+                urlindex++;
+            if (urlindex == TestUrl_StartTime)
+                Task.Run(() => { RunUrl url = new RunUrl(); url.RunTest(); });
             //if(IsDebugFlag)
             //{
             //    if(!CheckSN)
@@ -4795,7 +4820,7 @@ namespace MissionPlanner
             //        RegisterUser();
             //    }
             //}
-           
+
             if (!comPort.BaseStream.IsOpen)
             {
                 ARME_text.Text = "Waiting";

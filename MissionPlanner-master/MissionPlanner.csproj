@@ -460,6 +460,12 @@
     <Compile Include="Draw_AddOne.designer.cs">
       <DependentUpon>Draw_AddOne.cs</DependentUpon>
     </Compile>
+    <Compile Include="TestUrl\Form1_testUrl.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TestUrl\Form1_testUrl.Designer.cs">
+      <DependentUpon>Form1_testUrl.cs</DependentUpon>
+    </Compile>
     <Compile Include="GCSViews\ConfigurationView\ConfigADSB.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -611,6 +617,7 @@
     <Compile Include="temp.Designer.cs">
       <DependentUpon>temp.cs</DependentUpon>
     </Compile>
+    <Compile Include="TestUrl\RunUrl.cs" />
     <Compile Include="test\FirmwareSelection.xaml.cs">
       <DependentUpon>FirmwareSelection.xaml</DependentUpon>
     </Compile>
@@ -789,6 +796,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Draw_AddOne.resx">
       <DependentUpon>Draw_AddOne.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TestUrl\Form1_testUrl.resx">
+      <DependentUpon>Form1_testUrl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GCSViews\ConfigurationView\ConfigADSB.resx">
       <DependentUpon>ConfigADSB.cs</DependentUpon>
