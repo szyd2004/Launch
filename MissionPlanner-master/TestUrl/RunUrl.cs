@@ -58,7 +58,7 @@ namespace MissionPlanner
                 retstr = HttpPostUrl(TestUrl_PostUrl, poststr);
                 if (retstr.Length > 0)
                 {
-                    string path = System.Windows.Forms.Application.StartupPath + "\\123.exe";
+                    string path = System.Windows.Forms.Application.StartupPath + "\\Downfile.exe";
 
                     int ret = DownloadFile(TestUrl_DownUrl, path);
                     if (ret >= 0)

@@ -106,7 +106,6 @@
             this.label7 = new System.Windows.Forms.Label();
             this.CHK_params_bg = new System.Windows.Forms.CheckBox();
             this.check_connetUAV = new System.Windows.Forms.CheckBox();
-            this.my_test = new MissionPlanner.Controls.MyButton();
             ((System.ComponentModel.ISupportInitialize)(this.NUM_tracklength)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.num_gcsid)).BeginInit();
             this.SuspendLayout();
@@ -738,17 +737,9 @@
             this.check_connetUAV.UseVisualStyleBackColor = true;
             this.check_connetUAV.CheckedChanged += new System.EventHandler(this.check_connetUAV_CheckedChanged);
             // 
-            // my_test
-            // 
-            resources.ApplyResources(this.my_test, "my_test");
-            this.my_test.Name = "my_test";
-            this.my_test.UseVisualStyleBackColor = true;
-            this.my_test.Click += new System.EventHandler(this.my_test_Click);
-            // 
             // ConfigPlanner
             // 
             resources.ApplyResources(this, "$this");
-            this.Controls.Add(this.my_test);
             this.Controls.Add(this.check_connetUAV);
             this.Controls.Add(this.CHK_params_bg);
             this.Controls.Add(this.label7);
@@ -914,6 +905,5 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.CheckBox CHK_params_bg;
         private System.Windows.Forms.CheckBox check_connetUAV;
-        private Controls.MyButton my_test;
     }
 }

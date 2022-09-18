@@ -202,7 +202,7 @@ namespace MissionPlanner
                     }
                     catch (Exception exception)
                     {
-                        CustomMessageBox.Show("Failed to open link " + ((LinkLabel)sender).Tag.ToString());
+                        CustomMessageBox.Show("Failed to open link " + ((LinkLabel)sender).Tag.ToString() + exception.ToString());
                     }
                 };
 
